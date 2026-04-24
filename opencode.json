@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "build": {
+      "model": "openai/gpt-5.4"
+    },
+    "general": {
+      "mode": "subagent",
+      "model": "minimax/MiniMax-M2.7",
+      "steps": 80
+    },
+    "ui-ux-designer": {
+      "description": "UI/UX design specialist. Invoke for any design-related task including: frontend design, visual critique, color schemes, animations, design system extraction, polish, distillation, delight, hardening, onboarding flows, accessibility audits, and responsive adaptation. Automatically loads skills like frontend-design, critique, colorize, animate, polish, bolder, quieter, delight, distill, normalize, extract, harden, adapt, onboard, clarify, and audit as needed.",
+      "mode": "subagent",
+      "model": "zai-coding-plan/glm-5.1",
+      "steps": 40,
+      "prompt": "You are a UI/UX design specialist. When handling design tasks, proactively load relevant design skills using the skill tool (e.g. frontend-design, critique, colorize, animate, polish, bolder, quieter, delight, distill, normalize, extract, harden, adapt, onboard, clarify, audit). Always load the most relevant skill before starting your work."
+    },
+    "mr-boss-vic": {
+      "description": "Fallback escalation agent. Invoke when the general subagent hits its step limit or gets stuck on a task. Uses a more capable model to recover from stalled work and complete remaining tasks.",
+      "mode": "subagent",
+      "model": "openai/gpt-5.4",
+      "steps": 80
+    }
+  }
+}
