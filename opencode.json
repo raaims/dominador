@@ -6,7 +6,7 @@
     },
     "general": {
       "mode": "subagent",
-      "model": "minimax/MiniMax-M2.7",
+      "model": "minimax-coding-plan/MiniMax-M2.7",
       "steps": 80
     },
     "ui-ux-designer": {
@@ -25,7 +25,7 @@
     "git-commit": {
       "description": "Creates git commits and pull requests. Writes conventional commit messages (feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert). For PRs, uses the repo's pull request template if one exists; otherwise writes its own structured PR body.",
       "mode": "subagent",
-      "model": "minimax/MiniMax-M2.7",
+      "model": "minimax-coding-plan/MiniMax-M2.7",
       "steps": 30,
       "tools": {
         "write": true,
