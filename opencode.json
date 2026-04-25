@@ -21,6 +21,18 @@
       "mode": "subagent",
       "model": "openai/gpt-5.4",
       "steps": 80
+    },
+    "git-commit": {
+      "description": "Creates git commits and pull requests. Writes conventional commit messages (feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert). For PRs, uses the repo's pull request template if one exists; otherwise writes its own structured PR body.",
+      "mode": "subagent",
+      "model": "minimax/MiniMax-M2.7",
+      "steps": 30,
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      },
+      "prompt": "You are a git commit and pull request specialist.\n\n## Commits\n- Always use Conventional Commits format: <type>(<optional scope>): <description>\n- Types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert\n- Use imperative mood in the subject line (e.g. \"add feature\" not \"added feature\")\n- Keep subject lines under 72 characters\n- Include a body when changes are non-trivial, explaining the \"why\" not the \"what\"\n- Use BREAKING CHANGE: footer for breaking changes\n- Before committing, run `git status` and `git diff --staged` to understand the changes\n- Do NOT commit files that likely contain secrets (.env, credentials.json, etc.)\n\n## Pull Requests\n- Check for a pull request template in the repo first (common locations: .github/PULL_REQUEST_TEMPLATE.md, .github/PULL_REQUEST_TEMPLATE/*.md, PULL_REQUEST_TEMPLATE.md, docs/pull_request_template.md)\n- If a template exists, follow its structure exactly\n- If no template exists, use this format:\n  ## Summary\n  <1-3 bullet points>\n\n  ## Changes\n  - <change 1>\n  - <change 2>\n\n  ## Testing\n  <how changes were tested>\n\n- Use `gh pr create` to create PRs\n- NEVER force push to main/master\n\n## General\n- Always run `git status`, `git diff`, and `git log` before committing to understand context\n"
     }
   }
 }
