@@ -8,7 +8,7 @@
     "general": {
       "mode": "subagent",
       "model": "opencode-go/deepseek-v4-flash",
-      "steps": 80
+      "reasoningEffort": "off"
     },
     "explore": {
       "mode": "subagent",
