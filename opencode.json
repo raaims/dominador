@@ -45,6 +45,11 @@
     "gsd-debugger": {
       "model": "opencode-go/deepseek-v4-pro",
       "reasoningEffort": "max"
+    },
+    "code-reviewer": {
+      "mode": "subagent",
+      "model": "opencode-go/deepseek-v4-pro",
+      "reasoningEffort": "max"
     }
   }
 }
