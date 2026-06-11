@@ -6,9 +6,9 @@
       "model": "opencode-go/mimo-v2.5-pro"
     },
     "general": {
+      "description": "General-purpose subagent for delegating multi-step research and execution tasks.",
       "mode": "subagent",
-      "model": "opencode-go/mimo-v2.5",
-      "reasoningEffort": "max"
+      "model": "opencode-go/mimo-v2.5"
     },
     "explore": {
       "mode": "subagent",
